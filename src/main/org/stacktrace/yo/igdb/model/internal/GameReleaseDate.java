@@ -11,7 +11,7 @@ public class GameReleaseDate {
     private String human;
     private Integer updatedAt;
     private Integer createdAt;
-    private Integer date;
+    private Long date;
     private Integer region;
     private Integer y;
     private Integer m;
@@ -73,11 +73,11 @@ public class GameReleaseDate {
         return this;
     }
 
-    public Integer getDate() {
+    public Long getDate() {
         return date;
     }
 
-    public GameReleaseDate setDate(Integer date) {
+    public GameReleaseDate setDate(Long date) {
         this.date = date;
         return this;
     }

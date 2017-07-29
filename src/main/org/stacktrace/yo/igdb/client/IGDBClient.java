@@ -7,6 +7,7 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.request.GetRequest;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
+import org.stacktrace.yo.igdb.client.game.GameRequest;
 
 import java.io.IOException;
 
@@ -29,7 +30,7 @@ public class IGDBClient {
     }
 
 
-    GetRequest makeRequest(String url) {
+    public GetRequest makeRequest(String url) {
         return Unirest.get(this.url + "/" + url);
     }
 

@@ -2,6 +2,7 @@ package org.stacktrace.yo.igdb.client;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,12 +11,20 @@ import java.util.List;
 abstract public class IGDBClientRequester<T> {
 
     protected final IGDBClient client;
+    protected List<String> fieldStrings = new ArrayList<>();
+    protected List<Filter> filters = new ArrayList<>();
+    protected String searchString = "";
 
     public IGDBClientRequester(IGDBClient client) {
         this.client = client;
     }
 
-    abstract String createUrl();
+    public abstract String getBasePath();
 
-    abstract List<T> go() throws UnirestException;
+    public abstract List<T> go() throws UnirestException;
+
+
+    public String buildUrl() {
+        return getBasePath() + RequestUtils.createParams(searchString, fieldStrings, filters);
+    }
 }

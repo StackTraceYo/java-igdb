@@ -1,13 +1,7 @@
 package org.stacktrace.yo.igdb.model;
 
-import org.stacktrace.yo.igdb.model.internal.AlternativeName;
-import org.stacktrace.yo.igdb.model.internal.ESRB;
-import org.stacktrace.yo.igdb.model.internal.GameReleaseDate;
-import org.stacktrace.yo.igdb.model.internal.Image;
-import org.stacktrace.yo.igdb.model.internal.PEGI;
-import org.stacktrace.yo.igdb.model.internal.TimeToBeat;
-import org.stacktrace.yo.igdb.model.internal.Video;
-import org.stacktrace.yo.igdb.model.internal.Website;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.stacktrace.yo.igdb.model.internal.*;
 
 /**
  * Created by Stacktraceyo on 7/28/17.
@@ -18,38 +12,53 @@ public class Game implements IGDBModel {
     private String name;
     private String slug;
     private String url;
-    private Integer createdAt;
-    private Integer updatedAt;
+    @JsonProperty("created_at")
+    private Long createdAt;
+    @JsonProperty("updated_at")
+    private Long updatedAt;
     private String summary;
     private String storyline;
-    private Integer collection;
-    private Integer franchise;
+    private Long collection;
+    private Long franchise;
     private Integer hypes;
     private Double popularity;
     private Double rating;
+    @JsonProperty("rating_count")
     private Integer ratingCount;
+    @JsonProperty("aggregated_rating")
     private Double aggregatedRating;
+    @JsonProperty("aggregated_rating_count")
     private Integer aggregatedRatingCount;
+    @JsonProperty("total_rating")
     private Double totalRating;
+    @JsonProperty("total_rating_count")
     private Integer totalRatingCount;
     private Integer game;
     private Integer[] developers;
     private Integer[] publishers;
+    @JsonProperty("game_engines")
     private Integer[] gameEngines;
     private Integer category;
+    @JsonProperty("time_to_beat")
     private TimeToBeat timeToBeat;
+    @JsonProperty("player_perspectives")
     private Integer[] playerPerspectives;
+    @JsonProperty("game_modes")
     private Integer[] gameModes;
     private Integer[] keywords;
     private Integer[] themes;
     private Integer[] genres;
-    private Integer firstReleaseDate;
+    @JsonProperty("first_release_date")
+    private Long firstReleaseDate;
     private Integer status;
+    @JsonProperty("release_dates")
     private GameReleaseDate[] releaseDates;
+    @JsonProperty("alternative_names")
     private AlternativeName[] alternativeNames;
+    @JsonProperty("screenshots")
     private Image[] screenShots;
     private Video[] videos;
-    private Image[] cover;
+    private Image cover;
     private ESRB esrb;
     private PEGI pegi;
     private Website[] websites;
@@ -62,341 +71,319 @@ public class Game implements IGDBModel {
         return id;
     }
 
-    public Game setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
-        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public Game setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 
     public String getSlug() {
         return slug;
     }
 
-    public Game setSlug(String slug) {
+    public void setSlug(String slug) {
         this.slug = slug;
-        return this;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public Game setUrl(String url) {
+    public void setUrl(String url) {
         this.url = url;
-        return this;
     }
 
-    public Integer getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public Game setCreatedAt(Integer createdAt) {
+    public void setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
-        return this;
     }
 
-    public Integer getUpdatedAt() {
+    public Long getUpdatedAt() {
         return updatedAt;
     }
 
-    public Game setUpdatedAt(Integer updatedAt) {
+    public void setUpdatedAt(Long updatedAt) {
         this.updatedAt = updatedAt;
-        return this;
     }
 
     public String getSummary() {
         return summary;
     }
 
-    public Game setSummary(String summary) {
+    public void setSummary(String summary) {
         this.summary = summary;
-        return this;
     }
 
     public String getStoryline() {
         return storyline;
     }
 
-    public Game setStoryline(String storyline) {
+    public void setStoryline(String storyline) {
         this.storyline = storyline;
-        return this;
     }
 
-    public Integer getCollection() {
+    public Long getCollection() {
         return collection;
     }
 
-    public Game setCollection(Integer collection) {
+    public void setCollection(Long collection) {
         this.collection = collection;
-        return this;
     }
 
-    public Integer getFranchise() {
+    public Long getFranchise() {
         return franchise;
     }
 
-    public Game setFranchise(Integer franchise) {
+    public void setFranchise(Long franchise) {
         this.franchise = franchise;
-        return this;
     }
 
     public Integer getHypes() {
         return hypes;
     }
 
-    public Game setHypes(Integer hypes) {
+    public void setHypes(Integer hypes) {
         this.hypes = hypes;
-        return this;
     }
 
     public Double getPopularity() {
         return popularity;
     }
 
-    public Game setPopularity(Double popularity) {
+    public void setPopularity(Double popularity) {
         this.popularity = popularity;
-        return this;
     }
 
     public Double getRating() {
         return rating;
     }
 
-    public Game setRating(Double rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
-        return this;
     }
 
     public Integer getRatingCount() {
         return ratingCount;
     }
 
-    public Game setRatingCount(Integer ratingCount) {
+    public void setRatingCount(Integer ratingCount) {
         this.ratingCount = ratingCount;
-        return this;
     }
 
     public Double getAggregatedRating() {
         return aggregatedRating;
     }
 
-    public Game setAggregatedRating(Double aggregatedRating) {
+    public void setAggregatedRating(Double aggregatedRating) {
         this.aggregatedRating = aggregatedRating;
-        return this;
     }
 
     public Integer getAggregatedRatingCount() {
         return aggregatedRatingCount;
     }
 
-    public Game setAggregatedRatingCount(Integer aggregatedRatingCount) {
+    public void setAggregatedRatingCount(Integer aggregatedRatingCount) {
         this.aggregatedRatingCount = aggregatedRatingCount;
-        return this;
     }
 
     public Double getTotalRating() {
         return totalRating;
     }
 
-    public Game setTotalRating(Double totalRating) {
+    public void setTotalRating(Double totalRating) {
         this.totalRating = totalRating;
-        return this;
     }
 
     public Integer getTotalRatingCount() {
         return totalRatingCount;
     }
 
-    public Game setTotalRatingCount(Integer totalRatingCount) {
+    public void setTotalRatingCount(Integer totalRatingCount) {
         this.totalRatingCount = totalRatingCount;
-        return this;
     }
 
     public Integer getGame() {
         return game;
     }
 
-    public Game setGame(Integer game) {
+    public void setGame(Integer game) {
         this.game = game;
-        return this;
     }
 
     public Integer[] getDevelopers() {
         return developers;
     }
 
-    public Game setDevelopers(Integer[] developers) {
+    public void setDevelopers(Integer[] developers) {
         this.developers = developers;
-        return this;
     }
 
     public Integer[] getPublishers() {
         return publishers;
     }
 
-    public Game setPublishers(Integer[] publishers) {
+    public void setPublishers(Integer[] publishers) {
         this.publishers = publishers;
-        return this;
     }
 
     public Integer[] getGameEngines() {
         return gameEngines;
     }
 
-    public Game setGameEngines(Integer[] gameEngines) {
+    public void setGameEngines(Integer[] gameEngines) {
         this.gameEngines = gameEngines;
-        return this;
     }
 
     public Integer getCategory() {
         return category;
     }
 
-    public Game setCategory(Integer category) {
+    public void setCategory(Integer category) {
         this.category = category;
-        return this;
     }
 
     public TimeToBeat getTimeToBeat() {
         return timeToBeat;
     }
 
-    public Game setTimeToBeat(TimeToBeat timeToBeat) {
+    public void setTimeToBeat(TimeToBeat timeToBeat) {
         this.timeToBeat = timeToBeat;
-        return this;
     }
 
     public Integer[] getPlayerPerspectives() {
         return playerPerspectives;
     }
 
-    public Game setPlayerPerspectives(Integer[] playerPerspectives) {
+    public void setPlayerPerspectives(Integer[] playerPerspectives) {
         this.playerPerspectives = playerPerspectives;
-        return this;
     }
 
     public Integer[] getGameModes() {
         return gameModes;
     }
 
-    public Game setGameModes(Integer[] gameModes) {
+    public void setGameModes(Integer[] gameModes) {
         this.gameModes = gameModes;
-        return this;
     }
 
     public Integer[] getKeywords() {
         return keywords;
     }
 
-    public Game setKeywords(Integer[] keywords) {
+    public void setKeywords(Integer[] keywords) {
         this.keywords = keywords;
-        return this;
     }
 
     public Integer[] getThemes() {
         return themes;
     }
 
-    public Game setThemes(Integer[] themes) {
+    public void setThemes(Integer[] themes) {
         this.themes = themes;
-        return this;
     }
 
     public Integer[] getGenres() {
         return genres;
     }
 
-    public Game setGenres(Integer[] genres) {
+    public void setGenres(Integer[] genres) {
         this.genres = genres;
-        return this;
     }
 
-    public Integer getFirstReleaseDate() {
+    public Long getFirstReleaseDate() {
         return firstReleaseDate;
     }
 
-    public Game setFirstReleaseDate(Integer firstReleaseDate) {
+    public void setFirstReleaseDate(Long firstReleaseDate) {
         this.firstReleaseDate = firstReleaseDate;
-        return this;
     }
 
     public Integer getStatus() {
         return status;
     }
 
-    public Game setStatus(Integer status) {
+    public void setStatus(Integer status) {
         this.status = status;
-        return this;
     }
 
     public GameReleaseDate[] getReleaseDates() {
         return releaseDates;
     }
 
-    public Game setReleaseDates(GameReleaseDate[] releaseDates) {
+    public void setReleaseDates(GameReleaseDate[] releaseDates) {
         this.releaseDates = releaseDates;
-        return this;
     }
 
     public AlternativeName[] getAlternativeNames() {
         return alternativeNames;
     }
 
-    public Game setAlternativeNames(AlternativeName[] alternativeNames) {
+    public void setAlternativeNames(AlternativeName[] alternativeNames) {
         this.alternativeNames = alternativeNames;
-        return this;
     }
 
     public Image[] getScreenShots() {
         return screenShots;
     }
 
-    public Game setScreenShots(Image[] screenShots) {
+    public void setScreenShots(Image[] screenShots) {
         this.screenShots = screenShots;
-        return this;
     }
 
     public Video[] getVideos() {
         return videos;
     }
 
-    public Game setVideos(Video[] videos) {
+    public void setVideos(Video[] videos) {
         this.videos = videos;
-        return this;
     }
 
-    public Image[] getCover() {
+    public Image getCover() {
         return cover;
     }
 
-    public Game setCover(Image[] cover) {
+    public void setCover(Image cover) {
         this.cover = cover;
-        return this;
     }
 
     public ESRB getEsrb() {
         return esrb;
     }
 
-    public Game setEsrb(ESRB esrb) {
+    public void setEsrb(ESRB esrb) {
         this.esrb = esrb;
-        return this;
     }
 
     public PEGI getPegi() {
         return pegi;
     }
 
-    public Game setPegi(PEGI pegi) {
+    public void setPegi(PEGI pegi) {
         this.pegi = pegi;
-        return this;
+    }
+
+    public Website[] getWebsites() {
+        return websites;
+    }
+
+    public void setWebsites(Website[] websites) {
+        this.websites = websites;
+    }
+
+    public Integer[] getTags() {
+        return tags;
+    }
+
+    public void setTags(Integer[] tags) {
+        this.tags = tags;
     }
 }
