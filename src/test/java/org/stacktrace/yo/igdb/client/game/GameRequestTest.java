@@ -2,7 +2,7 @@ package org.stacktrace.yo.igdb.client.game;
 
 import org.junit.Test;
 import org.stacktrace.yo.igdb.client.IGDBClient;
-import org.stacktrace.yo.igdb.client.PostFix;
+import org.stacktrace.yo.igdb.client.common.PostFix;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -44,14 +44,14 @@ public class GameRequestTest {
                         GameFields.CATEGORY
                 )
                 .withSearch("Test")
-                .addFilter(GameFilter.getBuilder()
+                .addFilter(new GameFilter()
                         .filter(GameFields.CATEGORY)
                         .thatAre(PostFix.GREATER_THAN)
-                        .valueOf("89"))
-                .addFilter(GameFilter.getBuilder()
+                        .withValueOf("89"))
+                .addFilter(new GameFilter()
                         .filter(GameFields.AGGREGATED_RATING_COUNT)
                         .thatAre(PostFix.LESS_THAN)
-                        .valueOf("100"));
+                        .withValueOf("100"));
         assertThat(gameRequest.buildUrl(), is("games/?search=Test&fields=aggregated_rating_count,alternative_names,category&filter=[category][gt]=89&filter=[aggregated_rating_count][lt]=100"));
     }
 

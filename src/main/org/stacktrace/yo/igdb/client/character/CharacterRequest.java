@@ -1,9 +1,9 @@
-package org.stacktrace.yo.igdb.client.game;
+package org.stacktrace.yo.igdb.client.character;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.stacktrace.yo.igdb.client.IGDBClient;
 import org.stacktrace.yo.igdb.client.core.IGDBClientRequester;
-import org.stacktrace.yo.igdb.model.Game;
+import org.stacktrace.yo.igdb.model.Character;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,26 +11,26 @@ import java.util.List;
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
-public class GameRequest extends IGDBClientRequester<Game, GameRequest, GameFilter, GameFields> {
+public class CharacterRequest extends IGDBClientRequester<Character, CharacterRequest, CharacterFilter, CharacterFields> {
 
 
-    public GameRequest(IGDBClient client) {
+    public CharacterRequest(IGDBClient client) {
         super(client);
     }
 
     @Override
     public String getBasePath() {
-        return "games/";
+        return "characters/";
     }
 
-    public List<Game> go() throws UnirestException {
+    public List<Character> go() throws UnirestException {
         return Arrays.asList(client.makeRequest(buildUrl())
-                .asObject(Game[].class)
+                .asObject(Character[].class)
                 .getBody());
     }
 
     @Override
-    public String getFieldValue(GameFields field) {
+    public String getFieldValue(CharacterFields field) {
         return field.getUrlFormat();
     }
 }

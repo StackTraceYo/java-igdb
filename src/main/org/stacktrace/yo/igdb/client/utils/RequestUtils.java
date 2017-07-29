@@ -1,6 +1,7 @@
-package org.stacktrace.yo.igdb.client;
+package org.stacktrace.yo.igdb.client.utils;
 
 import com.google.common.base.Joiner;
+import org.stacktrace.yo.igdb.client.core.Filter;
 
 import java.util.List;
 

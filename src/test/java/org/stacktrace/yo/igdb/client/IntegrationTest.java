@@ -1,6 +1,7 @@
 package org.stacktrace.yo.igdb.client;
 
 import org.junit.Test;
+import org.stacktrace.yo.igdb.client.common.PostFix;
 import org.stacktrace.yo.igdb.client.game.GameFields;
 import org.stacktrace.yo.igdb.client.game.GameFilter;
 import org.stacktrace.yo.igdb.model.Game;
@@ -21,10 +22,10 @@ public class IntegrationTest {
 
         List<Game> y = x.games().withFields(GameFields.ALL)
                 .withSearch("zelda")
-                .addFilter(GameFilter.getBuilder()
+                .addFilter(new GameFilter()
                         .filter(GameFields.RATING)
                         .thatAre(PostFix.GREATER_THAN_OR_EQUALS)
-                        .valueOf("80"))
+                        .withValueOf("80"))
                 .go();
         y.isEmpty();
     }

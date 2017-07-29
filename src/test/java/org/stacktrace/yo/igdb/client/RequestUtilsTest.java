@@ -2,6 +2,8 @@ package org.stacktrace.yo.igdb.client;
 
 import com.google.common.collect.Lists;
 import org.junit.Test;
+import org.stacktrace.yo.igdb.client.core.Filter;
+import org.stacktrace.yo.igdb.client.utils.RequestUtils;
 
 import java.util.ArrayList;
 import java.util.List;

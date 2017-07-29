@@ -1,4 +1,4 @@
-package org.stacktrace.yo.igdb.client;
+package org.stacktrace.yo.igdb.client.common;
 
 public enum PostFix {
     EQUALS("eq"),
