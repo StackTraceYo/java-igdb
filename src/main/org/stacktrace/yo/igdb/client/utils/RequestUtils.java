@@ -10,6 +10,7 @@ public class RequestUtils {
     private final static String FIELDS = "fields";
     private final static String SEARCH = "search";
     private final static String FILTER = "filter";
+    private final static String COUNT = "count";
     private final static String EQUAL = "=";
     private final static String AND = "&";
     private final static String QUERY = "?";
@@ -18,11 +19,27 @@ public class RequestUtils {
         return Joiner.on(",").join(fields);
     }
 
-    public static String createParams(String search, List<String> fields, List<Filter> filters) {
+    //TODO refactor this badly
+    public static String createParams(String search, List<String> fields, List<Filter> filters, List<String> ids, Filter countFilters) {
         StringBuilder params = new StringBuilder();
         boolean hasSearch = !search.isEmpty();
         boolean hasFields = !fields.isEmpty();
         boolean hasFilters = !filters.isEmpty();
+        boolean hasCountFilter = countFilters != null;
+        boolean hasIds = !ids.isEmpty();
+        if (hasIds) {
+            params.append(createFieldQuery(ids));
+        }
+        if (hasCountFilter) {
+            params.append(COUNT)
+                    .append(QUERY)
+                    .append(FILTER)
+                    .append(wrapFilter(countFilters.getField()))
+                    .append(wrapFilter(countFilters.getPostFix()))
+                    .append(EQUAL)
+                    .append(countFilters.getValue());
+            return params.toString();
+        }
         if (hasFields || hasSearch || hasFilters) {
             params.append(QUERY);
         }

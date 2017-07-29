@@ -57,7 +57,8 @@ public class RequestUtilsTest {
         assertThat(RequestUtils.createParams(
                 "Zelda",
                 new ArrayList<>(),
-                Lists.newArrayList()),
+                Lists.newArrayList(),
+                Lists.newArrayList(), null),
                 is("?search=Zelda")
         );
     }
@@ -67,7 +68,8 @@ public class RequestUtilsTest {
         assertThat(RequestUtils.createParams(
                 "Zelda",
                 Lists.newArrayList("one,two,three"),
-                Lists.newArrayList()),
+                Lists.newArrayList(),
+                Lists.newArrayList(), null),
                 is("?search=Zelda&fields=one,two,three")
         );
     }
@@ -78,8 +80,33 @@ public class RequestUtilsTest {
         assertThat(RequestUtils.createParams(
                 "Zelda",
                 Lists.newArrayList("one,two,three"),
-                Lists.newArrayList(one, two)),
+                Lists.newArrayList(one, two),
+                Lists.newArrayList(), null),
                 is("?search=Zelda&fields=one,two,three&filter=[rating][gt]=80&filter=[name][eq]=zelda")
+        );
+    }
+
+    @Test
+    public void makesParamsWithIdsSearchAndFieldsAndFilters() throws Exception {
+
+        assertThat(RequestUtils.createParams(
+                "Zelda",
+                Lists.newArrayList("one,two,three"),
+                Lists.newArrayList(one, two),
+                Lists.newArrayList("15", "153"), null),
+                is("15,153?search=Zelda&fields=one,two,three&filter=[rating][gt]=80&filter=[name][eq]=zelda")
+        );
+    }
+
+    @Test
+    public void makesParamsWithIdsAndCount() throws Exception {
+
+        assertThat(RequestUtils.createParams(
+                "Zelda",
+                Lists.newArrayList(),
+                Lists.newArrayList(),
+                Lists.newArrayList(), one),
+                is("count?filter[rating][gt]=80")
         );
     }
 }
