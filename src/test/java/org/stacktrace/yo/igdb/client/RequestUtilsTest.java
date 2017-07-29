@@ -11,6 +11,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+//TODO Make this IGDBRequestUrl tests
 public class RequestUtilsTest {
 
     Filter one = new Filter() {

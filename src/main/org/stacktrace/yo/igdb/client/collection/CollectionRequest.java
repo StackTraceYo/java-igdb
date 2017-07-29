@@ -10,7 +10,7 @@ import java.util.List;
 
 public class CollectionRequest extends IGDBClientRequester<Collection, CollectionRequest, CollectionFilter, CollectionFields> {
 
-    public CollectionRequest(IGDBClient client) {
+    public CollectionRequest (IGDBClient client) {
         super(client);
     }
 
