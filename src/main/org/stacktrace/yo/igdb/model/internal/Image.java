@@ -1,11 +1,14 @@
 package org.stacktrace.yo.igdb.model.internal;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
 public class Image {
 
     private String url;
+    @JsonProperty("cloudinary_id")
     private String cloudinaryId;
     private Integer width;
     private Integer height;

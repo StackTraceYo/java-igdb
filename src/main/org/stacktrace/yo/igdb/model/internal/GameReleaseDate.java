@@ -5,27 +5,15 @@ package org.stacktrace.yo.igdb.model.internal;
  */
 public class GameReleaseDate {
 
-    private Integer game;
     private Integer category;
     private Integer platform;
     private String human;
-    private Integer updatedAt;
-    private Integer createdAt;
     private Long date;
     private Integer region;
     private Integer y;
     private Integer m;
 
     public GameReleaseDate() {
-    }
-
-    public Integer getGame() {
-        return game;
-    }
-
-    public GameReleaseDate setGame(Integer game) {
-        this.game = game;
-        return this;
     }
 
     public Integer getCategory() {
@@ -52,24 +40,6 @@ public class GameReleaseDate {
 
     public GameReleaseDate setHuman(String human) {
         this.human = human;
-        return this;
-    }
-
-    public Integer getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public GameReleaseDate setUpdatedAt(Integer updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public Integer getCreatedAt() {
-        return createdAt;
-    }
-
-    public GameReleaseDate setCreatedAt(Integer createdAt) {
-        this.createdAt = createdAt;
         return this;
     }
 

@@ -9,62 +9,112 @@ import org.stacktrace.yo.igdb.model.internal.*;
 public class Game implements IGDBModel {
 
     private Integer id;
+
     private String name;
+
     private String slug;
+
     private String url;
+
     @JsonProperty("created_at")
     private Long createdAt;
+
     @JsonProperty("updated_at")
     private Long updatedAt;
+
     private String summary;
+
     private String storyline;
+
     private Long collection;
+
     private Long franchise;
+
     private Integer hypes;
+
     private Double popularity;
+
     private Double rating;
+
     @JsonProperty("rating_count")
     private Integer ratingCount;
+
     @JsonProperty("aggregated_rating")
     private Double aggregatedRating;
+
     @JsonProperty("aggregated_rating_count")
     private Integer aggregatedRatingCount;
+
     @JsonProperty("total_rating")
     private Double totalRating;
+
     @JsonProperty("total_rating_count")
     private Integer totalRatingCount;
-    private Integer game;
+
+    private Long[] games;
+
     private Integer[] developers;
+
     private Integer[] publishers;
+
     @JsonProperty("game_engines")
     private Integer[] gameEngines;
+
     private Integer category;
+
     @JsonProperty("time_to_beat")
     private TimeToBeat timeToBeat;
+
     @JsonProperty("player_perspectives")
     private Integer[] playerPerspectives;
+
     @JsonProperty("game_modes")
     private Integer[] gameModes;
+
     private Integer[] keywords;
+
     private Integer[] themes;
+
     private Integer[] genres;
+
     @JsonProperty("first_release_date")
     private Long firstReleaseDate;
+
     private Integer status;
+
     @JsonProperty("release_dates")
     private GameReleaseDate[] releaseDates;
+
     @JsonProperty("alternative_names")
     private AlternativeName[] alternativeNames;
+
     @JsonProperty("screenshots")
     private Image[] screenShots;
+
     private Video[] videos;
+
     private Image cover;
+
     private ESRB esrb;
+
     private PEGI pegi;
+
     private Website[] websites;
+
     private Integer[] tags;
 
+    @JsonProperty("pulse_count")
+    private Integer pulseCount;
+
     public Game() {
+    }
+
+    public Integer getPulseCount() {
+        return pulseCount;
+    }
+
+    public void setPulseCount(Integer pulseCount) {
+        this.pulseCount = pulseCount;
     }
 
     public Integer getId() {
@@ -211,12 +261,12 @@ public class Game implements IGDBModel {
         this.totalRatingCount = totalRatingCount;
     }
 
-    public Integer getGame() {
-        return game;
+    public Long[] getGames() {
+        return games;
     }
 
-    public void setGame(Integer game) {
-        this.game = game;
+    public void setGames(Long[] game) {
+        this.games = game;
     }
 
     public Integer[] getDevelopers() {

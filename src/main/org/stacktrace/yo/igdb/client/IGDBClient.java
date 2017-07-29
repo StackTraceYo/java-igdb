@@ -1,13 +1,13 @@
 package org.stacktrace.yo.igdb.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.request.GetRequest;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.stacktrace.yo.igdb.client.character.CharacterRequest;
+import org.stacktrace.yo.igdb.client.collection.CollectionRequest;
 import org.stacktrace.yo.igdb.client.game.GameRequest;
 
 import java.io.IOException;
@@ -20,10 +20,11 @@ public class IGDBClient {
 
     private final String url;
 
-    private IGDBClient(String apiKey, String url) {
+    private IGDBClient(String apiKey, String url, Boolean cacheEnabled) {
         this.url = url;
         Unirest.setDefaultHeader("user-key", apiKey);
         Unirest.setDefaultHeader("Accept", "application/json");
+
     }
 
     public GameRequest games() {
@@ -32,6 +33,10 @@ public class IGDBClient {
 
     public CharacterRequest characters() {
         return new CharacterRequest(this);
+    }
+
+    public CollectionRequest collections() {
+        return new CollectionRequest(this);
     }
 
 
@@ -44,9 +49,7 @@ public class IGDBClient {
             mapper = new ObjectMapper() {
 
                 private com.fasterxml.jackson.databind.ObjectMapper jacksonObjectMapper
-                        = new com.fasterxml.jackson.databind.ObjectMapper()
-                        .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
+                        = new com.fasterxml.jackson.databind.ObjectMapper();
 
                 public <T> T readValue(String value, Class<T> valueType) {
                     try {
@@ -95,6 +98,7 @@ public class IGDBClient {
         private ObjectMapper mapper;
         private HttpClient client;
         private CloseableHttpAsyncClient asyncClient;
+        private Boolean cache = false;
 
         Builder() {
         }
@@ -124,9 +128,13 @@ public class IGDBClient {
             return this;
         }
 
+//        public Builder withCache(Boolean shouldEnableCaching) {
+//            this.cache = shouldEnableCaching;
+//            return this;
+//        }
 
         public IGDBClient build() {
-            return new IGDBClient(API_KEY, url)
+            return new IGDBClient(API_KEY, url, cache)
                     .setMapper(mapper)
                     .setAsyncClient(asyncClient)
                     .setHttpClient(client);
