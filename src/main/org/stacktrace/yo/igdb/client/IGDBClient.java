@@ -7,6 +7,7 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.request.GetRequest;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
+import org.stacktrace.yo.igdb.client.character.CharacterRequest;
 import org.stacktrace.yo.igdb.client.game.GameRequest;
 
 import java.io.IOException;
@@ -27,6 +28,10 @@ public class IGDBClient {
 
     public GameRequest games() {
         return new GameRequest(this);
+    }
+
+    public CharacterRequest characters() {
+        return new CharacterRequest(this);
     }
 
 

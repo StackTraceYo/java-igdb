@@ -13,7 +13,8 @@ public enum CharacterFields {
     ALIASES("aliases"),
     SPECIES("species"),
     GAMES("games"),
-    PEOPLE("people");
+    PEOPLE("people"),
+    ALL("*");
 
     private String urlFormat;
 

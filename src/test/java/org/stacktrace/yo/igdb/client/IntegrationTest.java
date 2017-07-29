@@ -1,9 +1,11 @@
 package org.stacktrace.yo.igdb.client;
 
 import org.junit.Test;
+import org.stacktrace.yo.igdb.client.character.CharacterFields;
 import org.stacktrace.yo.igdb.client.common.PostFix;
 import org.stacktrace.yo.igdb.client.game.GameFields;
 import org.stacktrace.yo.igdb.client.game.GameFilter;
+import org.stacktrace.yo.igdb.model.Character;
 import org.stacktrace.yo.igdb.model.Game;
 
 import java.util.List;
@@ -27,6 +29,9 @@ public class IntegrationTest {
                         .thatAre(PostFix.GREATER_THAN_OR_EQUALS)
                         .withValueOf("80"))
                 .go();
+
+        List<Character> z = x.characters().withFields(CharacterFields.ALL).withSearch("zelda").go();
+        z.isEmpty();
         y.isEmpty();
     }
 }

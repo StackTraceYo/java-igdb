@@ -1,5 +1,8 @@
 package org.stacktrace.yo.igdb.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.stacktrace.yo.igdb.model.internal.Image;
+
 import java.util.List;
 
 /**
@@ -11,9 +14,12 @@ public class Character implements IGDBModel {
     private String name;
     private String slug;
     private String url;
-    private Integer createdAt;
-    private Integer updatedAt;
-    private Object mugShot;
+    @JsonProperty("created_at")
+    private Long createdAt;
+    @JsonProperty("updated_at")
+    private Long updatedAt;
+    @JsonProperty("mug_shot")
+    private Image mugShot;
     private Integer gender;
     private List<String> aliases;
     private Integer species;
@@ -59,29 +65,29 @@ public class Character implements IGDBModel {
         return this;
     }
 
-    public Integer getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public Character setCreatedAt(Integer createdAt) {
+    public Character setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    public Integer getUpdatedAt() {
+    public Long getUpdatedAt() {
         return updatedAt;
     }
 
-    public Character setUpdatedAt(Integer updatedAt) {
+    public Character setUpdatedAt(Long updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    public Object getMugShot() {
+    public Image getMugShot() {
         return mugShot;
     }
 
-    public Character setMugShot(Object mugShot) {
+    public Character setMugShot(Image mugShot) {
         this.mugShot = mugShot;
         return this;
     }
