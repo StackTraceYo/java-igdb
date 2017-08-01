@@ -8,7 +8,11 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.stacktrace.yo.igdb.client.character.CharacterRequest;
 import org.stacktrace.yo.igdb.client.collection.CollectionRequest;
+import org.stacktrace.yo.igdb.client.company.CompanyRequest;
+import org.stacktrace.yo.igdb.client.core.IGDBApiRequester;
+import org.stacktrace.yo.igdb.client.feed.FeedRequest;
 import org.stacktrace.yo.igdb.client.game.GameRequest;
+import org.stacktrace.yo.igdb.client.page.PageRequest;
 
 import java.io.IOException;
 
@@ -16,7 +20,7 @@ import java.io.IOException;
  * Created by Stacktraceyo on 7/28/17.
  */
 
-public class IGDBClient {
+public class IGDBClient implements IGDBApiRequester {
 
     private final String url;
 
@@ -27,18 +31,35 @@ public class IGDBClient {
 
     }
 
+    @Override
     public GameRequest games() {
         return new GameRequest(this);
     }
 
+    @Override
     public CharacterRequest characters() {
         return new CharacterRequest(this);
     }
 
+    @Override
     public CollectionRequest collections() {
         return new CollectionRequest(this);
     }
 
+    @Override
+    public FeedRequest feeds() {
+        return new FeedRequest(this);
+    }
+
+    @Override
+    public CompanyRequest companies() {
+        return new CompanyRequest(this);
+    }
+
+    @Override
+    public PageRequest pages() {
+        return new PageRequest(this);
+    }
 
     public GetRequest makeRequest(String url) {
         return Unirest.get(this.url + "/" + url);
