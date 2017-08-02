@@ -5,14 +5,14 @@ import java.util.List;
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
-public class Genre implements IGDBModel{
+public class Genre implements IGDBModel {
 
     private Integer id;
     private String name;
     private String slug;
     private String url;
-    private Integer createdAt;
-    private Integer updatedAt;
+    private Long createdAt;
+    private Long updatedAt;
     private List<Integer> games;
 
     public Genre() {
@@ -54,20 +54,20 @@ public class Genre implements IGDBModel{
         return this;
     }
 
-    public Integer getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public Genre setCreatedAt(Integer createdAt) {
+    public Genre setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    public Integer getUpdatedAt() {
+    public Long getUpdatedAt() {
         return updatedAt;
     }
 
-    public Genre setUpdatedAt(Integer updatedAt) {
+    public Genre setUpdatedAt(Long updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }

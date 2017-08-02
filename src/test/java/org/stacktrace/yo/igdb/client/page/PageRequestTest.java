@@ -14,28 +14,28 @@ public class PageRequestTest {
 
     @Test
     public void pageRequestUrlWithFields() throws Exception {
-        PageRequest charcterRequest = new PageRequest(client)
+        PageRequest pageRequest = new PageRequest(client)
                 .withFields(
                         PageFields.CREATED_AT,
                         PageFields.COLOR
                 );
-        assertThat(charcterRequest.buildUrl(), is("pages/?fields=created_at,color"));
+        assertThat(pageRequest.buildUrl(), is("pages/?fields=created_at,color"));
     }
 
     @Test
     public void pageRequestUrlWithSearchAndFields() throws Exception {
-        PageRequest charcterRequest = new PageRequest(client)
+        PageRequest pageRequest = new PageRequest(client)
                 .withFields(
                         PageFields.CREATED_AT,
                         PageFields.COLOR
                 )
                 .withSearch("Test");
-        assertThat(charcterRequest.buildUrl(), is("pages/?search=Test&fields=created_at,color"));
+        assertThat(pageRequest.buildUrl(), is("pages/?search=Test&fields=created_at,color"));
     }
 
     @Test
     public void pageRequestUrlWithSearchAndFieldsAndFilters() throws Exception {
-        PageRequest charcterRequest = new PageRequest(client)
+        PageRequest pageRequest = new PageRequest(client)
                 .withFields(
                         PageFields.CREATED_AT,
                         PageFields.COLOR
@@ -49,7 +49,7 @@ public class PageRequestTest {
                         .filter(PageFields.CONTENT)
                         .thatAre(PostFix.LESS_THAN)
                         .withValueOf("100"));
-        assertThat(charcterRequest.buildUrl(), is("pages/?search=Test&fields=created_at,color&filter=[id][gt]=89&filter=[content][lt]=100"));
+        assertThat(pageRequest.buildUrl(), is("pages/?search=Test&fields=created_at,color&filter=[id][gt]=89&filter=[content][lt]=100"));
     }
 
 }

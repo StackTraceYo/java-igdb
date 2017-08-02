@@ -8,6 +8,7 @@ import org.stacktrace.yo.igdb.client.feed.FeedRequest;
 import org.stacktrace.yo.igdb.client.franchise.FranchiseRequest;
 import org.stacktrace.yo.igdb.client.game.GameRequest;
 import org.stacktrace.yo.igdb.client.gamemode.GameModeRequest;
+import org.stacktrace.yo.igdb.client.genre.GenreRequest;
 import org.stacktrace.yo.igdb.client.page.PageRequest;
 
 /**
@@ -30,6 +31,8 @@ public interface IGDBApiRequester {
     GameEngineRequest gameEngines();
 
     GameModeRequest gameModes();
+
+    GenreRequest genres();
 
     FranchiseRequest franchises();
 
