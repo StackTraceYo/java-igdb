@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
-public class GameMode {
+public class GameMode implements IGDBModel{
 
     private Integer id;
     private String name;

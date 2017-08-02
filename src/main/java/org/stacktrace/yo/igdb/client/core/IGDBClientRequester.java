@@ -2,6 +2,7 @@ package org.stacktrace.yo.igdb.client.core;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.stacktrace.yo.igdb.client.IGDBClient;
+import org.stacktrace.yo.igdb.model.IGDBModel;
 
 import java.util.Collections;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
-abstract public class IGDBClientRequester<T, U, K extends Filter, J> {
+abstract public class IGDBClientRequester<T extends IGDBModel, U, K extends Filter, J> implements IGDBApiRequest<T> {
 
     protected final IGDBClient client;
     private final IGDBRequesURL requestURL;
