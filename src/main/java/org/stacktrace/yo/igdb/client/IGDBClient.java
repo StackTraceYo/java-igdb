@@ -10,8 +10,11 @@ import org.stacktrace.yo.igdb.client.character.CharacterRequest;
 import org.stacktrace.yo.igdb.client.collection.CollectionRequest;
 import org.stacktrace.yo.igdb.client.company.CompanyRequest;
 import org.stacktrace.yo.igdb.client.core.IGDBApiRequester;
+import org.stacktrace.yo.igdb.client.engine.GameEngineRequest;
 import org.stacktrace.yo.igdb.client.feed.FeedRequest;
+import org.stacktrace.yo.igdb.client.franchise.FranchiseRequest;
 import org.stacktrace.yo.igdb.client.game.GameRequest;
+import org.stacktrace.yo.igdb.client.gamemode.GameModeRequest;
 import org.stacktrace.yo.igdb.client.page.PageRequest;
 
 import java.io.IOException;
@@ -59,6 +62,21 @@ public class IGDBClient implements IGDBApiRequester {
     @Override
     public PageRequest pages() {
         return new PageRequest(this);
+    }
+
+    @Override
+    public GameEngineRequest gameEngines() {
+        return new GameEngineRequest(this);
+    }
+
+    @Override
+    public GameModeRequest gameModes() {
+        return new GameModeRequest(this);
+    }
+
+    @Override
+    public FranchiseRequest franchises() {
+        return new FranchiseRequest(this);
     }
 
     public GetRequest makeRequest(String url) {
