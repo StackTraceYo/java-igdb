@@ -9,6 +9,7 @@ import org.stacktrace.yo.igdb.client.franchise.FranchiseRequest;
 import org.stacktrace.yo.igdb.client.game.GameRequest;
 import org.stacktrace.yo.igdb.client.gamemode.GameModeRequest;
 import org.stacktrace.yo.igdb.client.genre.GenreRequest;
+import org.stacktrace.yo.igdb.client.keyword.KeywordRequest;
 import org.stacktrace.yo.igdb.client.page.PageRequest;
 
 /**
@@ -35,5 +36,7 @@ public interface IGDBApiRequester {
     GenreRequest genres();
 
     FranchiseRequest franchises();
+
+    KeywordRequest keywords();
 
 }
