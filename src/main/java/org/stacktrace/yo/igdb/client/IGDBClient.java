@@ -18,6 +18,7 @@ import org.stacktrace.yo.igdb.client.gamemode.GameModeRequest;
 import org.stacktrace.yo.igdb.client.genre.GenreRequest;
 import org.stacktrace.yo.igdb.client.keyword.KeywordRequest;
 import org.stacktrace.yo.igdb.client.page.PageRequest;
+import org.stacktrace.yo.igdb.client.person.PersonRequest;
 
 import java.io.IOException;
 
@@ -84,6 +85,11 @@ public class IGDBClient implements IGDBApiRequester {
     @Override
     public GenreRequest genres() {
         return new GenreRequest(this);
+    }
+
+    @Override
+    public PersonRequest people() {
+        return new PersonRequest(this);
     }
 
     @Override

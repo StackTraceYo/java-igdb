@@ -1,5 +1,6 @@
 package org.stacktrace.yo.igdb.client;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.stacktrace.yo.igdb.client.character.CharacterFields;
 import org.stacktrace.yo.igdb.client.collection.CollectionFields;
@@ -17,6 +18,7 @@ import static org.junit.Assert.assertNotNull;
 public class IntegrationTest {
 
     @Test
+    @Ignore
     public void Test() throws Exception {
 
         IGDBClient client = IGDBClient.getBuilder()

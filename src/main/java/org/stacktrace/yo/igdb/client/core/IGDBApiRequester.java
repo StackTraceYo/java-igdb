@@ -11,6 +11,7 @@ import org.stacktrace.yo.igdb.client.gamemode.GameModeRequest;
 import org.stacktrace.yo.igdb.client.genre.GenreRequest;
 import org.stacktrace.yo.igdb.client.keyword.KeywordRequest;
 import org.stacktrace.yo.igdb.client.page.PageRequest;
+import org.stacktrace.yo.igdb.client.person.PersonRequest;
 
 /**
  * Created by Stacktraceyo on 8/1/17.
@@ -38,5 +39,7 @@ public interface IGDBApiRequester {
     FranchiseRequest franchises();
 
     KeywordRequest keywords();
+
+    PersonRequest people();
 
 }
