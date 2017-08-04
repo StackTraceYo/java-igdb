@@ -12,6 +12,7 @@ import org.stacktrace.yo.igdb.client.genre.GenreRequest;
 import org.stacktrace.yo.igdb.client.keyword.KeywordRequest;
 import org.stacktrace.yo.igdb.client.page.PageRequest;
 import org.stacktrace.yo.igdb.client.person.PersonRequest;
+import org.stacktrace.yo.igdb.client.platform.PlatformRequest;
 
 /**
  * Created by Stacktraceyo on 8/1/17.
@@ -41,5 +42,7 @@ public interface IGDBApiRequester {
     KeywordRequest keywords();
 
     PersonRequest people();
+
+    PlatformRequest platforms();
 
 }
