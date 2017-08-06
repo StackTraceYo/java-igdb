@@ -20,6 +20,8 @@ import org.stacktrace.yo.igdb.client.keyword.KeywordRequest;
 import org.stacktrace.yo.igdb.client.page.PageRequest;
 import org.stacktrace.yo.igdb.client.person.PersonRequest;
 import org.stacktrace.yo.igdb.client.platform.PlatformRequest;
+import org.stacktrace.yo.igdb.client.playerpersp.PlayerPerspectiveRequest;
+import org.stacktrace.yo.igdb.client.pulse.PulseRequest;
 
 import java.io.IOException;
 
@@ -101,6 +103,16 @@ public class IGDBClient implements IGDBApiRequester {
     @Override
     public KeywordRequest keywords() {
         return new KeywordRequest(this);
+    }
+
+    @Override
+    public PlayerPerspectiveRequest playerPerspectives() {
+        return new PlayerPerspectiveRequest(this);
+    }
+
+    @Override
+    public PulseRequest pulses() {
+        return new PulseRequest(this);
     }
 
     public GetRequest makeRequest(String url) {
