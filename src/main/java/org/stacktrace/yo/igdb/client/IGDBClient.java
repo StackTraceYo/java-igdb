@@ -22,6 +22,7 @@ import org.stacktrace.yo.igdb.client.person.PersonRequest;
 import org.stacktrace.yo.igdb.client.platform.PlatformRequest;
 import org.stacktrace.yo.igdb.client.playerpersp.PlayerPerspectiveRequest;
 import org.stacktrace.yo.igdb.client.pulse.PulseRequest;
+import org.stacktrace.yo.igdb.client.pulsegroup.PulseGroupRequest;
 
 import java.io.IOException;
 
@@ -113,6 +114,11 @@ public class IGDBClient implements IGDBApiRequester {
     @Override
     public PulseRequest pulses() {
         return new PulseRequest(this);
+    }
+
+    @Override
+    public PulseGroupRequest pulseGroups() {
+        return new PulseGroupRequest(this);
     }
 
     public GetRequest makeRequest(String url) {

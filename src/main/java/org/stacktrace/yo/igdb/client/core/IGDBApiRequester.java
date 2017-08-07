@@ -15,6 +15,7 @@ import org.stacktrace.yo.igdb.client.person.PersonRequest;
 import org.stacktrace.yo.igdb.client.platform.PlatformRequest;
 import org.stacktrace.yo.igdb.client.playerpersp.PlayerPerspectiveRequest;
 import org.stacktrace.yo.igdb.client.pulse.PulseRequest;
+import org.stacktrace.yo.igdb.client.pulsegroup.PulseGroupRequest;
 
 /**
  * Created by Stacktraceyo on 8/1/17.
@@ -50,5 +51,7 @@ public interface IGDBApiRequester {
     PlayerPerspectiveRequest playerPerspectives();
 
     PulseRequest pulses();
+
+    PulseGroupRequest pulseGroups();
 
 }
