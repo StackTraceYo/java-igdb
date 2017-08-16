@@ -18,6 +18,8 @@ import org.stacktrace.yo.igdb.client.pulse.PulseRequest;
 import org.stacktrace.yo.igdb.client.pulsegroup.PulseGroupRequest;
 import org.stacktrace.yo.igdb.client.pulsesource.PulseSourceRequest;
 import org.stacktrace.yo.igdb.client.release.ReleaseDateRequest;
+import org.stacktrace.yo.igdb.client.review.ReviewRequest;
+import org.stacktrace.yo.igdb.client.theme.ThemeRequest;
 
 /**
  * Created by Stacktraceyo on 8/1/17.
@@ -59,5 +61,9 @@ public interface IGDBApiRequester {
     PulseSourceRequest pulseSources();
 
     ReleaseDateRequest releaseDates();
+
+    ReviewRequest reviews();
+
+    ThemeRequest themes();
 
 }

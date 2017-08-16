@@ -15,28 +15,28 @@ public class PulseGroupRequestTest {
 
     @Test
     public void pulseGroupRequestUrlWithFields() throws Exception {
-        PulseGroupRequest playerPerspectiveRequest = new PulseGroupRequest(client)
+        PulseGroupRequest pulseGroupRequest = new PulseGroupRequest(client)
                 .withFields(
                         PulseGroupFields.CREATED_AT,
                         PulseGroupFields.NAME
                 );
-        assertThat(playerPerspectiveRequest.buildUrl(), is("pulse_groups/?fields=created_at,name"));
+        assertThat(pulseGroupRequest.buildUrl(), is("pulse_groups/?fields=created_at,name"));
     }
 
     @Test
     public void pulseGroupRequestUrlWithSearchAndFields() throws Exception {
-        PulseGroupRequest playerPerspectiveRequest = new PulseGroupRequest(client)
+        PulseGroupRequest pulseGroupRequest = new PulseGroupRequest(client)
                 .withFields(
                         PulseGroupFields.CREATED_AT,
                         PulseGroupFields.NAME
                 )
                 .withSearch("Test");
-        assertThat(playerPerspectiveRequest.buildUrl(), is("pulse_groups/?search=Test&fields=created_at,name"));
+        assertThat(pulseGroupRequest.buildUrl(), is("pulse_groups/?search=Test&fields=created_at,name"));
     }
 
     @Test
     public void pulseGroupRequestUrlWithSearchAndFieldsAndFilters() throws Exception {
-        PulseGroupRequest playerPerspectiveRequest = new PulseGroupRequest(client)
+        PulseGroupRequest pulseGroupRequest = new PulseGroupRequest(client)
                 .withFields(
                         PulseGroupFields.CREATED_AT,
                         PulseGroupFields.NAME
@@ -50,7 +50,7 @@ public class PulseGroupRequestTest {
                         .filter(PulseGroupFields.NAME)
                         .thatAre(PostFix.LESS_THAN)
                         .withValueOf("100"));
-        assertThat(playerPerspectiveRequest.buildUrl(), is("pulse_groups/?search=Test&fields=created_at,name&filter=[id][gt]=89&filter=[name][lt]=100"));
+        assertThat(pulseGroupRequest.buildUrl(), is("pulse_groups/?search=Test&fields=created_at,name&filter=[id][gt]=89&filter=[name][lt]=100"));
     }
 
 }

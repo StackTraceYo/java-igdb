@@ -25,6 +25,8 @@ import org.stacktrace.yo.igdb.client.pulse.PulseRequest;
 import org.stacktrace.yo.igdb.client.pulsegroup.PulseGroupRequest;
 import org.stacktrace.yo.igdb.client.pulsesource.PulseSourceRequest;
 import org.stacktrace.yo.igdb.client.release.ReleaseDateRequest;
+import org.stacktrace.yo.igdb.client.review.ReviewRequest;
+import org.stacktrace.yo.igdb.client.theme.ThemeRequest;
 
 import java.io.IOException;
 
@@ -131,6 +133,16 @@ public class IGDBClient implements IGDBApiRequester {
     @Override
     public ReleaseDateRequest releaseDates() {
         return new ReleaseDateRequest(this);
+    }
+
+    @Override
+    public ReviewRequest reviews() {
+        return new ReviewRequest(this);
+    }
+
+    @Override
+    public ThemeRequest themes() {
+        return new ThemeRequest(this);
     }
 
     public GetRequest makeRequest(String url) {

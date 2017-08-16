@@ -14,28 +14,28 @@ public class PulseRequestTest {
 
     @Test
     public void platformRequestUrlWithFields() throws Exception {
-        PulseRequest playerPerspectiveRequest = new PulseRequest(client)
+        PulseRequest pulse = new PulseRequest(client)
                 .withFields(
                         PulseFields.CREATED_AT,
                         PulseFields.AUTHOR
                 );
-        assertThat(playerPerspectiveRequest.buildUrl(), is("pulses/?fields=created_at,author"));
+        assertThat(pulse.buildUrl(), is("pulses/?fields=created_at,author"));
     }
 
     @Test
-    public void playerPerspectiveRequestUrlWithSearchAndFields() throws Exception {
-        PulseRequest playerPerspectiveRequest = new PulseRequest(client)
+    public void pulseUrlWithSearchAndFields() throws Exception {
+        PulseRequest pulse = new PulseRequest(client)
                 .withFields(
                         PulseFields.CREATED_AT,
                         PulseFields.AUTHOR
                 )
                 .withSearch("Test");
-        assertThat(playerPerspectiveRequest.buildUrl(), is("pulses/?search=Test&fields=created_at,author"));
+        assertThat(pulse.buildUrl(), is("pulses/?search=Test&fields=created_at,author"));
     }
 
     @Test
-    public void playerPerspectiveRequestUrlWithSearchAndFieldsAndFilters() throws Exception {
-        PulseRequest playerPerspectiveRequest = new PulseRequest(client)
+    public void pulseUrlWithSearchAndFieldsAndFilters() throws Exception {
+        PulseRequest pulse = new PulseRequest(client)
                 .withFields(
                         PulseFields.CREATED_AT,
                         PulseFields.AUTHOR
@@ -49,7 +49,7 @@ public class PulseRequestTest {
                         .filter(PulseFields.AUTHOR)
                         .thatAre(PostFix.LESS_THAN)
                         .withValueOf("100"));
-        assertThat(playerPerspectiveRequest.buildUrl(), is("pulses/?search=Test&fields=created_at,author&filter=[id][gt]=89&filter=[author][lt]=100"));
+        assertThat(pulse.buildUrl(), is("pulses/?search=Test&fields=created_at,author&filter=[id][gt]=89&filter=[author][lt]=100"));
     }
 
 }
