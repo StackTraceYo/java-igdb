@@ -3,7 +3,7 @@ package org.stacktrace.yo.igdb.model;
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
-public class ReleaseDate {
+public class ReleaseDate implements IGDBModel {
 
     private Integer id;
     private Integer game;
