@@ -3,9 +3,8 @@ package org.stacktrace.yo.igdb;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
-import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
+import com.fasterxml.jackson.module.jsonSchema.factories.SchemaFactoryWrapper;
 import org.stacktrace.yo.igdb.model.Character;
 import org.stacktrace.yo.igdb.model.Collection;
 import org.stacktrace.yo.igdb.model.Company;
@@ -40,7 +39,6 @@ import org.stacktrace.yo.igdb.model.internal.Website;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -52,7 +50,6 @@ public class SchemaGenerator {
 
     public static void main(String[] args) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        JsonSchemaGenerator generator = new JsonSchemaGenerator(mapper);
         List<Class> classes = Arrays.asList(
                 Character.class,
                 Collection.class,
@@ -90,10 +87,11 @@ public class SchemaGenerator {
         classes.forEach(klass -> {
             JsonSchema jsonSchema = null;
             try {
-                jsonSchema = generator.generateSchema(klass);
-                StringWriter json = new StringWriter();
-                mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-                mapper.writeValue(new File(klass.getName()), jsonSchema);
+                SchemaFactoryWrapper visitor = new SchemaFactoryWrapper();
+                mapper.acceptJsonFormatVisitor(klass, visitor);
+                JsonSchema schema = visitor.finalSchema();
+                mapper.writeValue(new File(klass.getName()), schema.asStringSchema());
+                System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(schema));
             } catch (JsonMappingException e) {
                 e.printStackTrace();
             } catch (JsonGenerationException e) {
