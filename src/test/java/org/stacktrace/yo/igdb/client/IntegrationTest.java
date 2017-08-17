@@ -2,18 +2,12 @@ package org.stacktrace.yo.igdb.client;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.stacktrace.yo.igdb.client.character.CharacterFields;
-import org.stacktrace.yo.igdb.client.collection.CollectionFields;
-import org.stacktrace.yo.igdb.client.common.PostFix;
-import org.stacktrace.yo.igdb.client.game.GameFields;
-import org.stacktrace.yo.igdb.client.game.GameFilter;
-import org.stacktrace.yo.igdb.model.Character;
-import org.stacktrace.yo.igdb.model.Collection;
-import org.stacktrace.yo.igdb.model.Game;
+import org.stacktrace.yo.igdb.client.feed.FeedFields;
+import org.stacktrace.yo.igdb.model.Feed;
 
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
+import static junit.framework.TestCase.assertTrue;
 
 public class IntegrationTest {
 
@@ -27,26 +21,44 @@ public class IntegrationTest {
                 .build();
 
 
-        List<Game> games = client.games().withFields(GameFields.ALL)
-                .withSearch("zelda")
-                .addFilter(new GameFilter()
-                        .filter(GameFields.RATING)
-                        .thatAre(PostFix.GREATER_THAN_OR_EQUALS)
-                        .withValueOf("80"))
+//        List<Game> games = client.games().withFields(GameFields.ALL)
+//                .withSearch("zelda")
+//                .addFilter(new GameFilter()
+//                        .filter(GameFields.RATING)
+//                        .thatAre(PostFix.GREATER_THAN_OR_EQUALS)
+//                        .withValueOf("80"))
+//                .go();
+//
+//        List<Character> chars = client.characters()
+//                .withFields(CharacterFields.ALL)
+//                .withSearch("zelda")
+//                .go();
+//
+//        List<Collection> collections = client.collections()
+//                .withFields(CollectionFields.ALL)
+//                .withSearch("bioshock")
+//                .go();
+
+//        List<Company> companies = client.companies()
+//                .withFields(CompanyFields.ALL)
+//                .withSearch("electronic")
+//                .go();
+
+//        List<GameEngine> gameEngines = client.gameEngines()
+//                .withFields(GameEngineFields.ALL)
+//                .withSearch("unreal")
+//                .go();
+
+        List<Feed> feeds = client.feeds()
+                .withFields(FeedFields.ALL)
+                .withSearch("worlds")
                 .go();
 
-        List<Character> chars = client.characters()
-                .withFields(CharacterFields.ALL)
-                .withSearch("zelda")
-                .go();
-
-        List<Collection> collections = client.collections()
-                .withFields(CollectionFields.ALL)
-                .withSearch("Bioshock")
-                .go();
-
-        assertNotNull(games);
-        assertNotNull(chars);
-        assertNotNull(collections);
+//        assertTrue(!games.isEmpty());
+//        assertTrue(!chars.isEmpty());
+//        assertTrue(!collections.isEmpty());
+//        assertTrue(!companies.isEmpty());
+//        assertTrue(!gameEngines.isEmpty());
+        assertTrue(!feeds.isEmpty());
     }
 }

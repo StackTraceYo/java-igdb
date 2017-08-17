@@ -1,5 +1,6 @@
 package org.stacktrace.yo.igdb.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.stacktrace.yo.igdb.model.internal.Image;
 
 import java.util.List;
@@ -13,20 +14,28 @@ public class Company implements IGDBModel {
     private String name;
     private String slug;
     private String url;
-    private Integer createdAt;
-    private Integer updatedAt;
+    @JsonProperty("created_at")
+    private Long createdAt;
+    @JsonProperty("updated_at")
+    private Long updatedAt;
     private Image logo;
     private String description;
     private Integer country;
     private String website;
-    private Integer startDate;
+    @JsonProperty("start_date")
+    private Long startDate;
+    @JsonProperty("start_date_category")
     private Integer startDateCategory;
+    @JsonProperty("changed_company_id")
     private Integer changedCompanyId;
-    private Integer changeDate;
+    @JsonProperty("change_date")
+    private Long changeDate;
+    @JsonProperty("change_date_category")
     private Integer changeDateCategory;
     private String twitter;
     private List<Integer> published;
     private List<Integer> developed;
+    private Integer parent;
 
     public Company() {
     }
@@ -67,20 +76,20 @@ public class Company implements IGDBModel {
         return this;
     }
 
-    public Integer getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public Company setCreatedAt(Integer createdAt) {
+    public Company setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    public Integer getUpdatedAt() {
+    public Long getUpdatedAt() {
         return updatedAt;
     }
 
-    public Company setUpdatedAt(Integer updatedAt) {
+    public Company setUpdatedAt(Long updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -121,11 +130,11 @@ public class Company implements IGDBModel {
         return this;
     }
 
-    public Integer getStartDate() {
+    public Long getStartDate() {
         return startDate;
     }
 
-    public Company setStartDate(Integer startDate) {
+    public Company setStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
@@ -148,11 +157,11 @@ public class Company implements IGDBModel {
         return this;
     }
 
-    public Integer getChangeDate() {
+    public Long getChangeDate() {
         return changeDate;
     }
 
-    public Company setChangeDate(Integer changeDate) {
+    public Company setChangeDate(Long changeDate) {
         this.changeDate = changeDate;
         return this;
     }
@@ -190,6 +199,15 @@ public class Company implements IGDBModel {
 
     public Company setDeveloped(List<Integer> developed) {
         this.developed = developed;
+        return this;
+    }
+
+    public Integer getParent() {
+        return parent;
+    }
+
+    public Company setParent(Integer parent) {
+        this.parent = parent;
         return this;
     }
 }

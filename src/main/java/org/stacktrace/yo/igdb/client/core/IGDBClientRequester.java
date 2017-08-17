@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
-abstract public class IGDBClientRequester<T extends IGDBModel, U, K extends Filter, J> implements IGDBApiRequest<T> {
+abstract public class IGDBClientRequester<T, U, K extends Filter, J> implements IGDBApiRequest<T> {
 
     protected final IGDBClient client;
     private final IGDBRequesURL requestURL;

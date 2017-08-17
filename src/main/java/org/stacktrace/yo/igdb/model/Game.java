@@ -45,6 +45,9 @@ public class Game implements IGDBModel {
     @JsonProperty("aggregated_rating_count")
     private Integer aggregatedRatingCount;
 
+    @JsonProperty("weighted_rating")
+    private Integer weightedRating;
+
     @JsonProperty("total_rating")
     private Double totalRating;
 
@@ -105,6 +108,10 @@ public class Game implements IGDBModel {
 
     @JsonProperty("pulse_count")
     private Integer pulseCount;
+
+    private Integer[] dlcs;
+
+    private Integer[] expansions;
 
     public Game() {
     }
@@ -435,5 +442,32 @@ public class Game implements IGDBModel {
 
     public void setTags(Integer[] tags) {
         this.tags = tags;
+    }
+
+    public Integer getWeightedRating() {
+        return weightedRating;
+    }
+
+    public Game setWeightedRating(Integer weightedRating) {
+        this.weightedRating = weightedRating;
+        return this;
+    }
+
+    public Integer[] getDlcs() {
+        return dlcs;
+    }
+
+    public Game setDlcs(Integer[] dlcs) {
+        this.dlcs = dlcs;
+        return this;
+    }
+
+    public Integer[] getExpansions() {
+        return expansions;
+    }
+
+    public Game setExpansions(Integer[] expansions) {
+        this.expansions = expansions;
+        return this;
     }
 }

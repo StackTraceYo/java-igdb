@@ -4,7 +4,7 @@ import org.stacktrace.yo.igdb.model.IGDBModel;
 
 import java.util.List;
 
-public interface IGDBApiRequest<T extends IGDBModel> {
+public interface IGDBApiRequest<T> {
 
     List<T> go() throws Exception;
 

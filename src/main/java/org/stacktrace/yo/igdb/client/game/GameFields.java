@@ -41,6 +41,9 @@ public enum GameFields {
     PEGI("pegi"),
     WEBSITES("websites"),
     TAGS("websites"),
+    WEIGHTED_RATING("weighted_rating"),
+    DLCS("dlcs"),
+    EXPANSIONS("expansions"),
     ALL("*");
 
     private String urlFormat;

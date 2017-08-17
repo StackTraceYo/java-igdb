@@ -43,7 +43,7 @@ public class CompanyRequestTest {
                         CompanyFields.CREATED_AT,
                         CompanyFields.GAMES
                 )
-                .withSearch("Test")
+                .withSearch("Electronic Arts")
                 .addFilter(new CompanyFilter()
                         .filter(CompanyFields.ID)
                         .thatAre(PostFix.GREATER_THAN)
@@ -52,7 +52,7 @@ public class CompanyRequestTest {
                         .filter(CompanyFields.GAMES)
                         .thatAre(PostFix.LESS_THAN)
                         .withValueOf("100"));
-        assertThat(charcterRequest.buildUrl(), is("companies/?search=Test&fields=created_at,games&filter=[id][gt]=89&filter=[games][lt]=100"));
+        assertThat(charcterRequest.buildUrl(), is("companies/?search=Electronic Arts&fields=created_at,games&filter=[id][gt]=89&filter=[games][lt]=100"));
     }
 
 }

@@ -1,5 +1,6 @@
 package org.stacktrace.yo.igdb.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.stacktrace.yo.igdb.model.internal.Image;
 
 import java.util.List;
@@ -13,8 +14,10 @@ public class GameEngine implements IGDBModel {
     private String name;
     private String slug;
     private String url;
-    private Integer createdAt;
-    private Integer updatedAt;
+    @JsonProperty("created_at")
+    private Long createdAt;
+    @JsonProperty("updated_at")
+    private Long updatedAt;
     private Image logo;
     private List<Integer> games;
     private List<Integer> companies;
@@ -59,20 +62,20 @@ public class GameEngine implements IGDBModel {
         return this;
     }
 
-    public Integer getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public GameEngine setCreatedAt(Integer createdAt) {
+    public GameEngine setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    public Integer getUpdatedAt() {
+    public Long getUpdatedAt() {
         return updatedAt;
     }
 
-    public GameEngine setUpdatedAt(Integer updatedAt) {
+    public GameEngine setUpdatedAt(Long updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
