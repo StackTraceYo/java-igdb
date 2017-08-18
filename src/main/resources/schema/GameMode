@@ -1,7 +1,7 @@
 {
   "type" : "object",
   "properties" : {
-    "createdAt" : {
+    "created_at" : {
       "type" : "integer"
     },
     "name" : {
@@ -22,7 +22,7 @@
     "url" : {
       "type" : "string"
     },
-    "updatedAt" : {
+    "updated_at" : {
       "type" : "integer"
     }
   }

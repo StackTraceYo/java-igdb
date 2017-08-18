@@ -1,7 +1,7 @@
 {
   "type" : "object",
   "properties" : {
-    "createdAt" : {
+    "created_at" : {
       "type" : "integer"
     },
     "games" : {
@@ -28,10 +28,10 @@
     "content" : {
       "type" : "string"
     },
-    "feedLikesCount" : {
+    "feed_likes_count" : {
       "type" : "integer"
     },
-    "updatedAt" : {
+    "updated_at" : {
       "type" : "integer"
     }
   }

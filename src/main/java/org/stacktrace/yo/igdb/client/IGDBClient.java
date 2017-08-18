@@ -42,7 +42,6 @@ public class IGDBClient implements IGDBApiRequester {
         this.url = url;
         Unirest.setDefaultHeader("user-key", apiKey);
         Unirest.setDefaultHeader("Accept", "application/json");
-
     }
 
     @Override
@@ -160,6 +159,7 @@ public class IGDBClient implements IGDBApiRequester {
                     try {
                         return jacksonObjectMapper.readValue(value, valueType);
                     } catch (IOException e) {
+                        System.out.print(value);
                         throw new RuntimeException(e);
                     }
                 }

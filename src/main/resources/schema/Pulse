@@ -7,13 +7,13 @@
     "uid" : {
       "type" : "string"
     },
-    "createdAt" : {
+    "created_at" : {
       "type" : "integer"
     },
     "image" : {
       "type" : "string"
     },
-    "publishedAt" : {
+    "published_at" : {
       "type" : "integer"
     },
     "author" : {
@@ -22,7 +22,7 @@
     "id" : {
       "type" : "integer"
     },
-    "pulseSource" : {
+    "pulse_source" : {
       "type" : "integer"
     },
     "title" : {
@@ -31,7 +31,7 @@
     "url" : {
       "type" : "string"
     },
-    "updatedAt" : {
+    "updated_at" : {
       "type" : "integer"
     },
     "tags" : {

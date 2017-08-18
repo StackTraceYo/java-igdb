@@ -4,7 +4,7 @@
     "date" : {
       "type" : "integer"
     },
-    "createdAt" : {
+    "created_at" : {
       "type" : "integer"
     },
     "game" : {
@@ -31,7 +31,7 @@
     "platform" : {
       "type" : "integer"
     },
-    "updatedAt" : {
+    "updated_at" : {
       "type" : "integer"
     }
   }

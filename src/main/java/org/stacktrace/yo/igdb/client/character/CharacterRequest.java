@@ -3,14 +3,17 @@ package org.stacktrace.yo.igdb.client.character;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.stacktrace.yo.igdb.client.IGDBClient;
 import org.stacktrace.yo.igdb.client.core.IGDBClientRequester;
+import org.stacktrace.yo.igdb.client.core.count.Count;
+import org.stacktrace.yo.igdb.client.core.count.Countable;
 import org.stacktrace.yo.igdb.model.Character;
+
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
-public class CharacterRequest extends IGDBClientRequester<Character, CharacterRequest, CharacterFilter, CharacterFields> {
+public class CharacterRequest extends IGDBClientRequester<Character, CharacterRequest, CharacterFilter, CharacterFields> implements Countable {
 
 
     public CharacterRequest(IGDBClient client) {
@@ -26,6 +29,11 @@ public class CharacterRequest extends IGDBClientRequester<Character, CharacterRe
         return Arrays.asList(client.makeRequest(buildUrl())
                 .asObject(Character[].class)
                 .getBody());
+    }
+
+    @Override
+    public Count count() throws UnirestException {
+        return client.makeRequest(getBasePath() + COUNT).asObject(Count.class).getBody();
     }
 
     @Override

@@ -1,7 +1,7 @@
 {
   "type" : "object",
   "properties" : {
-    "createdAt" : {
+    "created_at" : {
       "type" : "integer"
     },
     "game" : {
@@ -10,7 +10,7 @@
         "type" : "integer"
       }
     },
-    "publishedAt" : {
+    "published_at" : {
       "type" : "integer"
     },
     "name" : {
@@ -28,7 +28,7 @@
     "category" : {
       "type" : "integer"
     },
-    "updatedAt" : {
+    "updated_at" : {
       "type" : "integer"
     },
     "tags" : {

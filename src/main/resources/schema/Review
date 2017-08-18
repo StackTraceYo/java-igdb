@@ -4,7 +4,7 @@
     "youtube" : {
       "type" : "string"
     },
-    "positivePoints" : {
+    "positive_points" : {
       "type" : "string"
     },
     "game" : {
@@ -25,13 +25,13 @@
     "conclusion" : {
       "type" : "string"
     },
-    "createdAt" : {
+    "created_at" : {
       "type" : "integer"
     },
-    "negativePoints" : {
+    "negative_points" : {
       "type" : "string"
     },
-    "ratingCategory" : {
+    "rating_category" : {
       "type" : "integer"
     },
     "id" : {
@@ -52,7 +52,7 @@
     "username" : {
       "type" : "string"
     },
-    "updatedAt" : {
+    "updated_at" : {
       "type" : "integer"
     },
     "likes" : {

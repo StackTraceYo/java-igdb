@@ -2,13 +2,15 @@ package org.stacktrace.yo.igdb.client.theme;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.stacktrace.yo.igdb.client.IGDBClient;
+import org.stacktrace.yo.igdb.client.core.count.Count;
+import org.stacktrace.yo.igdb.client.core.count.Countable;
 import org.stacktrace.yo.igdb.client.core.IGDBClientRequester;
 import org.stacktrace.yo.igdb.model.Theme;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ThemeRequest extends IGDBClientRequester<Theme, ThemeRequest, ThemeFilter, ThemeFields> {
+public class ThemeRequest extends IGDBClientRequester<Theme, ThemeRequest, ThemeFilter, ThemeFields> implements Countable {
 
 
     public ThemeRequest(IGDBClient client) {
@@ -29,5 +31,10 @@ public class ThemeRequest extends IGDBClientRequester<Theme, ThemeRequest, Theme
     @Override
     public String getFieldValue(ThemeFields field) {
         return field.getUrlFormat();
+    }
+
+    @Override
+    public Count count() throws UnirestException {
+        return client.makeRequest(getBasePath()+ COUNT).asObject(Count.class).getBody();
     }
 }

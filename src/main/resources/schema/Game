@@ -183,6 +183,12 @@
     },
     "status" : {
       "type" : "integer"
+    },
+    "multiplayer_modes" :{
+          "type" : "array",
+          "items" : {
+        "javaType": "org.stacktrace.yo.igdb.model.internal.MultiplayerMode"
+          }
     }
   }
 }

@@ -13,7 +13,7 @@
     "url" : {
       "type" : "string"
     },
-    "createdAt" : {
+    "created_at" : {
       "type" : "integer"
     },
     "versions" : {
@@ -37,13 +37,13 @@
     "id" : {
       "type" : "integer"
     },
-    "alternativeName" : {
+    "alternative_name" : {
       "type" : "string"
     },
     "slug" : {
       "type" : "string"
     },
-    "updatedAt" : {
+    "updated_at" : {
       "type" : "integer"
     }
   }

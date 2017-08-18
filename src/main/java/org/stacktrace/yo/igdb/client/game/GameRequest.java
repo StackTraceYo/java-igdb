@@ -3,6 +3,8 @@ package org.stacktrace.yo.igdb.client.game;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.stacktrace.yo.igdb.client.IGDBClient;
 import org.stacktrace.yo.igdb.client.core.IGDBClientRequester;
+import org.stacktrace.yo.igdb.client.core.count.Count;
+import org.stacktrace.yo.igdb.client.core.count.Countable;
 import org.stacktrace.yo.igdb.model.Game;
 
 import java.util.Arrays;
@@ -11,7 +13,7 @@ import java.util.List;
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
-public class GameRequest extends IGDBClientRequester<Game, GameRequest, GameFilter, GameFields> {
+public class GameRequest extends IGDBClientRequester<Game, GameRequest, GameFilter, GameFields> implements Countable {
 
 
     public GameRequest(IGDBClient client) {
@@ -38,5 +40,10 @@ public class GameRequest extends IGDBClientRequester<Game, GameRequest, GameFilt
     @Override
     public String getFieldValue(GameFields field) {
         return field.getUrlFormat();
+    }
+
+    @Override
+    public Count count() throws UnirestException {
+        return client.makeRequest(getBasePath() + COUNT).asObject(Count.class).getBody();
     }
 }

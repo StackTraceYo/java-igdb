@@ -1,0 +1,44 @@
+{
+  "type" : "object",
+  "properties" : {
+    "platform" : {
+      "type" : "integer"
+    },
+    "offlinecoop" : {
+      "type" : "boolean"
+    },
+    "onlinecoop" : {
+      "type" : "boolean"
+    },
+    "lancoop" : {
+          "type" : "boolean"
+    },
+    "campaigncoop" : {
+      "type" : "boolean"
+    },
+    "splitscreenonline" : {
+      "type" : "boolean"
+    },
+    "dropin" : {
+      "type" : "boolean"
+    },
+    "offlinecoopmax" : {
+      "type" : "integer"
+    },
+    "onlinecoopmax" : {
+      "type" : "integer"
+    },
+    "dropin" : {
+     "offlinemax" : "integer"
+    },
+    "offlinemax" : {
+          "type" : "integer"
+        },
+    "onlinemax" : {
+              "type" : "integer"
+            },
+    "splitscreen" : {
+    "type" : "boolean"
+    }
+  }
+}
