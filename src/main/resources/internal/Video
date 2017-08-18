@@ -1,0 +1,11 @@
+{
+  "type" : "object",
+  "properties" : {
+    "name" : {
+      "type" : "string"
+    },
+    "video_id" : {
+      "type" : "string"
+    }
+  }
+}

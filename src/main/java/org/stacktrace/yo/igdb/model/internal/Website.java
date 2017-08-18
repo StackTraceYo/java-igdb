@@ -1,31 +1,60 @@
+
 package org.stacktrace.yo.igdb.model.internal;
 
-/**
- * Created by Stacktraceyo on 7/28/17.
- */
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 public class Website {
 
+    @JsonProperty("category")
+    private Long category;
+    @JsonProperty("url")
     private String url;
-    private Integer category;
 
-    public Website() {
+    @JsonProperty("category")
+    public Long getCategory() {
+        return category;
     }
 
+    @JsonProperty("category")
+    public void setCategory(Long category) {
+        this.category = category;
+    }
+
+    @JsonProperty("url")
     public String getUrl() {
         return url;
     }
 
-    public Website setUrl(String url) {
+    @JsonProperty("url")
+    public void setUrl(String url) {
         this.url = url;
-        return this;
     }
 
-    public Integer getCategory() {
-        return category;
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 
-    public Website setCategory(Integer category) {
-        this.category = category;
-        return this;
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().append(category).append(url).toHashCode();
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+        if ((other instanceof Website) == false) {
+            return false;
+        }
+        Website rhs = ((Website) other);
+        return new EqualsBuilder().append(category, rhs.category).append(url, rhs.url).isEquals();
+    }
+
 }

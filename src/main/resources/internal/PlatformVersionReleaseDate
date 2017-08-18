@@ -1,0 +1,11 @@
+{
+  "type" : "object",
+  "properties" : {
+    "date" : {
+      "type" : "integer"
+    },
+    "region" : {
+      "type" : "integer"
+    }
+  }
+}

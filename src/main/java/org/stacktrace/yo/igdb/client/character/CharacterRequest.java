@@ -4,7 +4,6 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import org.stacktrace.yo.igdb.client.IGDBClient;
 import org.stacktrace.yo.igdb.client.core.IGDBClientRequester;
 import org.stacktrace.yo.igdb.model.Character;
-
 import java.util.Arrays;
 import java.util.List;
 

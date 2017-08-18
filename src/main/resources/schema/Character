@@ -1,0 +1,50 @@
+{
+  "type" : "object",
+  "properties" : {
+    "aliases" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "gender" : {
+      "type" : "integer"
+    },
+    "updated_at" : {
+      "type" : "integer"
+    },
+    "species" : {
+      "type" : "integer"
+    },
+    "mug_shot" : {
+        "javaType" : "org.stacktrace.yo.igdb.model.internal.Image"
+      },
+    "name" : {
+      "type" : "string"
+    },
+    "games" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "created_at" : {
+      "type" : "integer"
+    },
+    "id" : {
+      "type" : "integer"
+    },
+    "people" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "slug" : {
+      "type" : "string"
+    },
+    "url" : {
+      "type" : "string"
+    }
+  }
+}

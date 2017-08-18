@@ -67,11 +67,6 @@
             <artifactId>commons-lang</artifactId>
             <version>2.4</version>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.module</groupId>
-            <artifactId>jackson-module-jsonSchema</artifactId>
-            <version>2.5.4</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -82,11 +77,13 @@
                 <version>0.4.37</version>
                 <configuration>
                     <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
-                    <targetPackage>com.stacktrace.yo.igdb.model</targetPackage>
+                    <targetPackage>org.stacktrace.yo.igdb.model</targetPackage>
                     <useLongIntegers>true</useLongIntegers>
                     <targetVersion>1.8</targetVersion>
                     <includeAdditionalProperties>false</includeAdditionalProperties>
                     <includeAccessors>true</includeAccessors>
+                    <removeOldOutput>true</removeOldOutput>
+                    <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>

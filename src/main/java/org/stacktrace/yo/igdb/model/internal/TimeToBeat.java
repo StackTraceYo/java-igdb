@@ -1,41 +1,72 @@
+
 package org.stacktrace.yo.igdb.model.internal;
 
-/**
- * Created by Stacktraceyo on 7/28/17.
- */
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 public class TimeToBeat {
 
-    private Integer hastly;
-    private Integer normally;
-    private Integer completely;
+    @JsonProperty("hastly")
+    private Long hastly;
+    @JsonProperty("completely")
+    private Long completely;
+    @JsonProperty("normally")
+    private Long normally;
 
-    public TimeToBeat() {
-    }
-
-    public Integer getHastly() {
+    @JsonProperty("hastly")
+    public Long getHastly() {
         return hastly;
     }
 
-    public TimeToBeat setHastly(Integer hastly) {
+    @JsonProperty("hastly")
+    public void setHastly(Long hastly) {
         this.hastly = hastly;
-        return this;
     }
 
-    public Integer getNormally() {
-        return normally;
-    }
-
-    public TimeToBeat setNormally(Integer normally) {
-        this.normally = normally;
-        return this;
-    }
-
-    public Integer getCompletely() {
+    @JsonProperty("completely")
+    public Long getCompletely() {
         return completely;
     }
 
-    public TimeToBeat setCompletely(Integer completely) {
+    @JsonProperty("completely")
+    public void setCompletely(Long completely) {
         this.completely = completely;
-        return this;
     }
+
+    @JsonProperty("normally")
+    public Long getNormally() {
+        return normally;
+    }
+
+    @JsonProperty("normally")
+    public void setNormally(Long normally) {
+        this.normally = normally;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().append(hastly).append(completely).append(normally).toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+        if ((other instanceof TimeToBeat) == false) {
+            return false;
+        }
+        TimeToBeat rhs = ((TimeToBeat) other);
+        return new EqualsBuilder().append(hastly, rhs.hastly).append(completely, rhs.completely).append(normally, rhs.normally).isEquals();
+    }
+
 }

@@ -1,0 +1,14 @@
+{
+  "type" : "object",
+  "properties" : {
+    "hastly" : {
+      "type" : "integer"
+    },
+    "completely" : {
+      "type" : "integer"
+    },
+    "normally" : {
+      "type" : "integer"
+    }
+  }
+}

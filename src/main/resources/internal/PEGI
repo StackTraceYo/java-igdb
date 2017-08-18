@@ -1,0 +1,11 @@
+{
+  "type" : "object",
+  "properties" : {
+    "rating" : {
+      "type" : "integer"
+    },
+    "synopsis" : {
+      "type" : "string"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "type" : "object",
+  "properties" : {
+    "summary" : {
+      "type" : "string"
+    },
+    "uid" : {
+      "type" : "string"
+    },
+    "createdAt" : {
+      "type" : "integer"
+    },
+    "image" : {
+      "type" : "string"
+    },
+    "publishedAt" : {
+      "type" : "integer"
+    },
+    "author" : {
+      "type" : "string"
+    },
+    "id" : {
+      "type" : "integer"
+    },
+    "pulseSource" : {
+      "type" : "integer"
+    },
+    "title" : {
+      "type" : "string"
+    },
+    "url" : {
+      "type" : "string"
+    },
+    "updatedAt" : {
+      "type" : "integer"
+    },
+    "tags" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    }
+  }
+}

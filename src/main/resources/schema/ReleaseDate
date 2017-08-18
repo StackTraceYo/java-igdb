@@ -1,0 +1,38 @@
+{
+  "type" : "object",
+  "properties" : {
+    "date" : {
+      "type" : "integer"
+    },
+    "createdAt" : {
+      "type" : "integer"
+    },
+    "game" : {
+      "type" : "integer"
+    },
+    "y" : {
+      "type" : "integer"
+    },
+    "id" : {
+      "type" : "integer"
+    },
+    "category" : {
+      "type" : "integer"
+    },
+    "region" : {
+      "type" : "integer"
+    },
+    "human" : {
+      "type" : "string"
+    },
+    "m" : {
+      "type" : "integer"
+    },
+    "platform" : {
+      "type" : "integer"
+    },
+    "updatedAt" : {
+      "type" : "integer"
+    }
+  }
+}

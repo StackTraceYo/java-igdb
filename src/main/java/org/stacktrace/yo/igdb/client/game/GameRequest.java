@@ -24,9 +24,15 @@ public class GameRequest extends IGDBClientRequester<Game, GameRequest, GameFilt
     }
 
     public List<Game> go() throws UnirestException {
-        return Arrays.asList(client.makeRequest(buildUrl())
-                .asObject(Game[].class)
-                .getBody());
+        try {
+            return Arrays.asList(client.makeRequest(buildUrl())
+                    .asObject(Game[].class)
+                    .getBody());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.print((client.makeRequest(buildUrl()).asString().getBody()));
+            return null;
+        }
     }
 
     @Override

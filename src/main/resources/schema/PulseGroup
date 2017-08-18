@@ -1,0 +1,41 @@
+{
+  "type" : "object",
+  "properties" : {
+    "createdAt" : {
+      "type" : "integer"
+    },
+    "game" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "publishedAt" : {
+      "type" : "integer"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "pulses" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "id" : {
+      "type" : "integer"
+    },
+    "category" : {
+      "type" : "integer"
+    },
+    "updatedAt" : {
+      "type" : "integer"
+    },
+    "tags" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "type" : "object",
+  "properties" : {
+    "summary" : {
+      "type" : "string"
+    },
+    "generation" : {
+      "type" : "integer"
+    },
+    "website" : {
+      "type" : "string"
+    },
+    "url" : {
+      "type" : "string"
+    },
+    "createdAt" : {
+      "type" : "integer"
+    },
+    "versions" : {
+      "type" : "array",
+      "items" : {
+        "javaType" : "org.stacktrace.yo.igdb.model.internal.PlatformVersion"
+      }
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "games" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "logo" : {
+      "javaType" : "org.stacktrace.yo.igdb.model.internal.Image"
+    },
+    "id" : {
+      "type" : "integer"
+    },
+    "alternativeName" : {
+      "type" : "string"
+    },
+    "slug" : {
+      "type" : "string"
+    },
+    "updatedAt" : {
+      "type" : "integer"
+    }
+  }
+}

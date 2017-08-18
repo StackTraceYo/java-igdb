@@ -1,0 +1,44 @@
+{
+  "type" : "object",
+  "properties" : {
+    "createdAt" : {
+      "type" : "integer"
+    },
+    "characters" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "games" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "mugShot" : {
+      "javaType" : "org.stacktrace.yo.igdb.model.internal.Image"
+    },
+    "voiceActed" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "id" : {
+      "type" : "integer"
+    },
+    "slug" : {
+      "type" : "string"
+    },
+    "url" : {
+      "type" : "string"
+    },
+    "updatedAt" : {
+      "type" : "integer"
+    }
+  }
+}

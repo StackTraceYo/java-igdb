@@ -3,7 +3,6 @@ package org.stacktrace.yo.igdb.client.pulsesource;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.stacktrace.yo.igdb.client.IGDBClient;
 import org.stacktrace.yo.igdb.client.core.IGDBClientRequester;
-import org.stacktrace.yo.igdb.model.PulseGroup;
 import org.stacktrace.yo.igdb.model.PulseSource;
 
 import java.util.Arrays;

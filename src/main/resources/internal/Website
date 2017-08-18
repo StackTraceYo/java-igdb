@@ -1,0 +1,12 @@
+{
+  "type" : "object",
+  "id" : "urn:jsonschema:org:stacktrace:yo:igdb:model:internal:Website",
+  "properties" : {
+    "category" : {
+      "type" : "integer"
+    },
+    "url" : {
+      "type" : "string"
+    }
+  }
+}

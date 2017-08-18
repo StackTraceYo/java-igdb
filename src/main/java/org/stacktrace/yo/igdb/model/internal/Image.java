@@ -1,54 +1,84 @@
 package org.stacktrace.yo.igdb.model.internal;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
 public class Image {
 
-    private String url;
+    @JsonProperty("width")
+    private Long width;
     @JsonProperty("cloudinary_id")
     private String cloudinaryId;
-    private Integer width;
-    private Integer height;
+    @JsonProperty("url")
+    private String url;
+    @JsonProperty("height")
+    private Long height;
 
-    public Image() {
+    @JsonProperty("width")
+    public Long getWidth() {
+        return width;
     }
 
-    public String getUrl() {
-        return url;
+    @JsonProperty("width")
+    public void setWidth(Long width) {
+        this.width = width;
     }
 
-    public Image setUrl(String url) {
-        this.url = url;
-        return this;
-    }
-
+    @JsonProperty("cloudinary_id")
     public String getCloudinaryId() {
         return cloudinaryId;
     }
 
-    public Image setCloudinaryId(String cloudinaryId) {
+    @JsonProperty("cloudinary_id")
+    public void setCloudinaryId(String cloudinaryId) {
         this.cloudinaryId = cloudinaryId;
-        return this;
     }
 
-    public Integer getWidth() {
-        return width;
+    @JsonProperty("url")
+    public String getUrl() {
+        return url;
     }
 
-    public Image setWidth(Integer width) {
-        this.width = width;
-        return this;
+    @JsonProperty("url")
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public Integer getHeight() {
+    @JsonProperty("height")
+    public Long getHeight() {
         return height;
     }
 
-    public Image setHeight(Integer height) {
+    @JsonProperty("height")
+    public void setHeight(Long height) {
         this.height = height;
-        return this;
     }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().append(width).append(cloudinaryId).append(url).append(height).toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+        if ((other instanceof Image) == false) {
+            return false;
+        }
+        Image rhs = ((Image) other);
+        return new EqualsBuilder().append(width, rhs.width).append(cloudinaryId, rhs.cloudinaryId).append(url, rhs.url).append(height, rhs.height).isEquals();
+    }
+
 }
