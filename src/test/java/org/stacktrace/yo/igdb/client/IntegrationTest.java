@@ -64,7 +64,7 @@ public class IntegrationTest {
                 .mapToObj(i -> Integer.valueOf(i).toString())
                 .collect(Collectors.joining(","));
 
-        client.characters().withIds(ids).go().forEach(chara -> println(chara.getName()) );
+        client.characters().withIds(ids).go().forEach(chara -> println(chara.getName()));
 
         List<Character> chars = client.characters()
                 .withFields(CharacterFields.ALL)
@@ -87,6 +87,12 @@ public class IntegrationTest {
         List<Theme> themes = client.themes().withIds(ids).withFields(ThemeFields.ALL).go();
         themes.forEach(theme -> System.out.print(theme.getName()));
 
+        count = client.genres().count();
+        ids = IntStream.range(0, Math.toIntExact(count.getCount()))
+                .mapToObj(i -> Integer.valueOf(i).toString())
+                .collect(Collectors.joining(","));
+
+        client.genres().withIds(ids).go().forEach(genre -> println(genre.getName()));
 //
 //
 ////
