@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "created_at": {
+      "type": "integer"
+    },
+    "games": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "id": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "user": {
+      "type": "integer"
+    },
+    "url": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "feed_likes_count": {
+      "type": "integer"
+    },
+    "updated_at": {
+      "type": "integer"
+    }
+  }
+}

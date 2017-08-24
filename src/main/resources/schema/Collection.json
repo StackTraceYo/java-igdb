@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "updated_at": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "games": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "created_at": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "country": {
+      "type": "integer"
+    },
+    "sub_category": {
+      "type": "integer"
+    },
+    "game": {
+      "type": "integer"
+    },
+    "color": {
+      "type": "integer"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "integer"
+    },
+    "background": {
+      "javaType": "org.stacktrace.yo.igdb.model.internal.Image"
+    },
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "javaType": "org.stacktrace.yo.igdb.model.internal.Image"
+    },
+    "company": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "integer"
+    },
+    "user": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "page_follows_count": {
+      "type": "integer"
+    },
+    "updated_at": {
+      "type": "integer"
+    }
+  }
+}

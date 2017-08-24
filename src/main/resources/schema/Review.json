@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "youtube": {
+      "type": "string"
+    },
+    "positive_points": {
+      "type": "string"
+    },
+    "game": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "integer"
+    },
+    "content": {
+      "type": "string"
+    },
+    "conclusion": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "integer"
+    },
+    "negative_points": {
+      "type": "string"
+    },
+    "rating_category": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "views": {
+      "type": "integer"
+    },
+    "introduction": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "integer"
+    },
+    "likes": {
+      "type": "integer"
+    }
+  }
+}
