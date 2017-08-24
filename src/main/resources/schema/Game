@@ -189,6 +189,15 @@
           "items" : {
         "javaType": "org.stacktrace.yo.igdb.model.internal.MultiplayerMode"
           }
+    },
+    "standalone_expansions" : {
+            "type": "array",
+            "items" : {
+                "type" : "integer"
+        }
+    },
+    "game" : {
+        "type" : "integer"
     }
   }
 }

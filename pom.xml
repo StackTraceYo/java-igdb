@@ -83,6 +83,7 @@
                     <includeAdditionalProperties>false</includeAdditionalProperties>
                     <includeAccessors>true</includeAccessors>
                     <removeOldOutput>true</removeOldOutput>
+                    <includeToString>false</includeToString>
                     <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
                 </configuration>
                 <executions>
