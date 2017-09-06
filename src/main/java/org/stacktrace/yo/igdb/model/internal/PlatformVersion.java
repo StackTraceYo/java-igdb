@@ -1,10 +1,13 @@
 package org.stacktrace.yo.igdb.model.internal;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.List;
 
 /**
  * Created by Stacktraceyo on 7/28/17.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PlatformVersion {
 
     private String url;

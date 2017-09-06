@@ -4,6 +4,12 @@
     "franchise": {
       "type": "integer"
     },
+    "franchises": {
+      "type": "array",
+      "items" : {
+        "type": "integer"
+      }
+    },
     "keywords": {
       "type": "array",
       "items": {
