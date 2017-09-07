@@ -24,6 +24,11 @@ abstract public class IGDBClientRequester<T, U, K extends Filter, J> implements 
 
     public abstract List<T> go() throws UnirestException;
 
+    @Override
+    public String create() throws Exception {
+        return buildUrl();
+    }
+
     public String buildUrl() {
         return getBasePath() + requestURL.build();
     }
