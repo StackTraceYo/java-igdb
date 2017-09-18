@@ -2,7 +2,6 @@ package org.stacktrace.yo.igdb.client.core;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.stacktrace.yo.igdb.client.IGDBClient;
-import org.stacktrace.yo.igdb.model.IGDBModel;
 
 import java.util.Collections;
 import java.util.List;
@@ -26,7 +25,7 @@ abstract public class IGDBClientRequester<T, U, K extends Filter, J> implements 
 
     @Override
     public String create() throws Exception {
-        return buildUrl();
+        return client.getAPIUrl() + "/" + buildUrl();
     }
 
     public String buildUrl() {

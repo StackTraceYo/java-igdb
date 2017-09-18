@@ -37,12 +37,23 @@ import java.io.IOException;
 public class IGDBClient implements IGDBApiRequester {
 
     private final String url;
+    private final String apiKey;
 
     private IGDBClient(String apiKey, String url, Boolean cacheEnabled) {
         this.url = url;
+        this.apiKey = apiKey;
         Unirest.setDefaultHeader("user-key", apiKey);
         Unirest.setDefaultHeader("Accept", "application/json");
     }
+
+    public final String getAPIUrl() {
+        return url;
+    }
+
+    public final String getApiKey() {
+        return apiKey;
+    }
+
 
     @Override
     public GameRequest games() {
