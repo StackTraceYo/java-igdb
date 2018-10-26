@@ -26,7 +26,7 @@ public class IntegrationTest {
     public void Test() throws Exception {
 
         IGDBClient client = IGDBClient.getBuilder()
-                .withKey("ea380a24711ad2e2ae60c63223371f03")
+                .withKey("2265155d63e8037cbbba556838303736")
                 .withUrl("https://api-2445582011268.apicast.io")
                 .build();
 
